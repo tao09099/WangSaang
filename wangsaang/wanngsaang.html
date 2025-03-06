@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #008080;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 10px 0;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #008080;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        .producto {
+            background-color: white;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            width: 200px;
+            vertical-align: top;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .producto img {
+            width: 100%;
+            height: auto;
+        }
+        .producto h3 {
+            color: #008080;
+        }
+        footer {
+            background-color: #008080;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .formulario {
+            text-align: left;
+            margin: 20px auto;
+            width: 300px;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script>
+        function validarFormulario() {
+            var nombre = document.getElementById("nombre").value;
+            var tarjeta = document.getElementById("tarjeta").value;
+            var direccion = document.getElementById("direccion").value;
+            
+            if (nombre === "" || tarjeta === "" || direccion === "") {
+                alert("Por favor, completa todos los campos obligatorios.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>WangSaang</h1>
+    </header>
+    <nav>
+        <a href="inicio WangSaang.html">Inicio</a>
+        <a href="inicio WangSaang.html">Productos</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    <section>
+        <div class="producto">
+            <img src="camiseta.jpg" alt="Camiseta Básica">
+            <h3>Camiseta Básica</h3>
+            <p>Precio: 19.99€</p>
+            <p>Camiseta de algodón 100% en varios colores.</p>
+            <button onclick="document.getElementById('formularioPago').style.display='block'">Comprar</button>
+        </div>
+        <div class="producto">
+            <img src="pantalon.jpg" alt="Pantalón Vaquero">
+            <h3>Pantalón Vaquero</h3>
+            <p>Precio: 49.99€</p>
+            <p>Pantalón vaquero clásico, disponible en azul y negro.</p>
+            <button onclick="document.getElementById('formularioPago').style.display='block'">Comprar</button>
+        </div>
+        <div class="producto">
+            <img src="chaqueta.jpg" alt="Chaqueta de Cuero">
+            <h3>Chaqueta de Cuero</h3>
+            <p>Precio: 129.99€</p>
+            <p>Chaqueta de cuero auténtico con forro interior.</p>
+            <button onclick="document.getElementById('formularioPago').style.display='block'">Comprar</button>
+        </div>
+        <div class="producto">
+            <img src="zapatos.jpg" alt="Zapatos Deportivos">
+            <h3>Zapatos Deportivos</h3>
+            <p>Precio: 89.99€</p>
+            <p>Zapatos deportivos cómodos y elegantes.</p>
+            <button onclick="document.getElementById('formularioPago').style.display='block'">Comprar</button>
+        </div>
+    </section>
+    <div id="formularioPago" class="formulario" style="display:none;">
+        <h3>Formulario de Pago</h3>
+        <form onsubmit="return validarFormulario()">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre"><br><br>
+            <label for="tarjeta">Número de Tarjeta:</label><br>
+            <input type="text" id="tarjeta" name="tarjeta"><br><br>
+            <label for="direccion">Dirección:</label><br>
+            <input type="text" id="direccion" name="direccion"><br><br>
+            <input type="submit" value="Pagar">
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2025 Tienda de Ropa. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+
